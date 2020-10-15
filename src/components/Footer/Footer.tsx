@@ -5,6 +5,7 @@ import {
   faPhone,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
+import GitHubButton from 'react-github-btn';
 
 import { SocialLinks } from '../../components/SocialLinks';
 
@@ -52,6 +53,15 @@ export const Footer: React.FC = () => {
         </div>
         <div className="flex flex-col items-center justify-center">
           <SocialLinks className="mb-4" />
+          <div className="mb-2">
+            <GitHubButton
+              href="https://github.com/machine-servant"
+              data-size="large"
+              aria-label="Follow @machine-servant on GitHub"
+            >
+              Follow @machine-servant
+            </GitHubButton>
+          </div>
           <div>© {new Date().getFullYear()}, MachineServant LLC</div>
         </div>
       </Inner>
