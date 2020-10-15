@@ -17,13 +17,13 @@ export const Header: React.FunctionComponent<IHeader> = ({
       </SiteTitle>
       <SiteLinks>
         <div className="lg:flex-grow">
-          <Link className="mr-4" to="/blog">
+          <Link activeClassName="underline" className="mr-4" to="/blog">
             Blog
           </Link>
-          <Link className="mr-4" to="/contact/">
+          <Link activeClassName="underline" className="mr-4" to="/contact/">
             Contact
           </Link>
-          <Link className="mr-4" to="/about">
+          <Link activeClassName="underline" className="mr-4" to="/about">
             About Us
           </Link>
         </div>
