@@ -78,9 +78,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/evanstern/machineservant-2.0"
+    "url": "https://github.com/machine-servant/machineservant"
   },
   "bugs": {
-    "url": "https://github.com/evanstern/machineservant-2.0/issues"
+    "url": "https://github.com/machine-servant/machineservant/issues"
   }
 }
