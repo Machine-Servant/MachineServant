@@ -41,7 +41,7 @@ export const MainPage: React.FC = () => (
         <p className="text-lg">
           Learn more{' '}
           <Link className="text-blue-600" to="/about">
-            About us
+            About Us
           </Link>
           .
         </p>
