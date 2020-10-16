@@ -16,7 +16,7 @@ export const Background: React.FC<IBackground> = ({ className, children }) => {
         id
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

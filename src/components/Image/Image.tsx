@@ -37,7 +37,7 @@ export const Image: React.FC<IImage> = ({ name }) => {
         edges {
           node {
             fluid {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
               originalName
             }
           }
