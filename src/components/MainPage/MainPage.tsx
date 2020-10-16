@@ -49,7 +49,7 @@ export const MainPage: React.FC = () => (
       <Callout imageName="contact.png" headerText="Sound good?">
         <h3 className="text-lg">Reach out to us and get a free estimate!</h3>
         <br />
-        <Link className="text-2xl text-blue-800" to="/contact">
+        <Link className="text-2xl text-blue-600" to="/contact">
           Contact Us
         </Link>
         <hr className="my-6" />
