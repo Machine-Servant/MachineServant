@@ -6,9 +6,10 @@ import { Layout } from '../Layout';
 import { MainBlurb } from '../MainBlurb';
 import { SEO } from '../SEO';
 import { SocialLinks } from '../SocialLinks';
+import { Image } from '../Image';
 
 import { Callout } from './components/Callout';
-import { Emphasis } from './styles';
+import { Emphasis, QuoteMark } from './styles';
 
 export const MainPage: React.FC = () => (
   <Layout showHeaderImage>
@@ -55,6 +56,42 @@ export const MainPage: React.FC = () => (
         <hr className="my-6" />
         <SocialLinks />
       </Callout>
+    </div>
+    <div className="grid mt-10 gird-cols-1">
+      <div className="p-8 bg-gray-400 bg-opacity-50 border-gray-500 border-opacity-50 rounded-lg shadow-lg sm:p-12">
+        <blockquote className="relative p-4 italic text-gray-800 bg-gray-100 bg-opacity-50 border-l-4 border-gray-500 rounded-lg quote">
+          <QuoteMark>&ldquo;</QuoteMark>
+          <p className="mb-4 text-lg">
+            After countless individuals and companies along with hundreds of
+            thousands of dollars in losses, we have finally found a company that
+            we trust. Machine Servant is affordable, efficient and they
+            definitely know their stuff. Led by Evan who is not only a true
+            professional but through our working relationship has also become a
+            friend. I highly recommend taking them on for any project that you
+            have in mind.
+          </p>
+          <cite className="flex items-center">
+            <Image
+              className="w-12 mr-4 bg-gray-500 rounded-full"
+              name="EngeloRumora.jpeg"
+              alt="Engelo Rumora"
+            />
+            <div className="flex flex-col items-start">
+              <span className="mb-1 text-sm italic font-bold">
+                Engelo Rumora
+              </span>
+              <a
+                className="text-sm"
+                href="https://engelorumora.com"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                OhioCashFlow
+              </a>
+            </div>
+          </cite>
+        </blockquote>
+      </div>
     </div>
   </Layout>
 );

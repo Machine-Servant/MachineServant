@@ -4,7 +4,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 
 interface IImage {
+  className?: string;
   name: string;
+  alt?: string;
 }
 
 /*
@@ -30,7 +32,7 @@ interface IAllImageSharp {
   };
 }
 
-export const Image: React.FC<IImage> = ({ name }) => {
+export const Image: React.FC<IImage> = ({ className = '', name, alt }) => {
   const data: IAllImageSharp = useStaticQuery(graphql`
     query {
       allImageSharp {
@@ -54,5 +56,5 @@ export const Image: React.FC<IImage> = ({ name }) => {
     return null;
   }
 
-  return <Img fluid={image.node.fluid} />;
+  return <Img className={className} fluid={image.node.fluid} alt={alt} />;
 };
