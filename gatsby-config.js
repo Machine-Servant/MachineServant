@@ -103,6 +103,7 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         tailwind: true,
+        ignore: ['prismjs/'],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
