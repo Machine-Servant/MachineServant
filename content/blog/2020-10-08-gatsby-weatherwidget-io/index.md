@@ -3,14 +3,14 @@ date: "2020-10-08"
 title: "GatsbyJS and weatherwidget.io"
 author: "Evan Stern"
 featuredImage: ./weatherwidgetio.jpg
-tags: ["MachineServant", "Web Development", "GatsbyJS", "3rdParty"]
+tags: ["MachineServant", "Web Development", "GatsbyJS", "3rdParty", "React"]
 keywords: ["Gatsby", "GatsbyJS", "weatherwidget", "Weather Widget", "weatherwidget.io"]
 published: true
 ---
 
 Embedded assets can be a pain sometimes. A lot of the time, the embed code
 you are given just doesn't work out of the box. This is doubly true with
-Gatsby because it's server side rendering can cause hiccups with embedded
+Gatsby because its server side rendering can cause hiccups with embedded
 code fragments. Also, you sometimes run into situations where the embed code
 contains javascript that doesn't work correctly.
 

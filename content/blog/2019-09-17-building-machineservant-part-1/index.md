@@ -3,7 +3,7 @@ date: "2019-09-17"
 title: "Building MachineServant Part 1"
 author: "Evan Stern"
 featuredImage: ./gatsby.png
-tags: ["MachineServant", "Web Development", "GatsbyJS"]
+tags: ["MachineServant", "Web Development", "GatsbyJS", "React"]
 published: true
 ---
 
