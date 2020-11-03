@@ -2,9 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `MachineServant`,
     description: `Make the machines work for you! Let us help you build your next web site or application.`,
-    author: `@machsInnervate`,
-    site_url: `https://www.machineservant.com`,
-    siteUrl: `https://www.machineservant.com`, // for gatsby-plugin-sitemap
+    author: `@MachineServant`,
+    siteUrl: `https://www.machineservant.com`,
     image: `/images/machineservant.jpg`,
     contact: `contact@machineservant.com`,
     keywords: [
@@ -18,6 +17,11 @@ module.exports = {
       'Cleveland',
       'Ohio',
     ],
+    social: {
+      linkedIn: 'https://www.linkedin.com/company/machineservant/',
+      facebook: 'https://www.facebook.com/MachineServant/',
+      instagram: 'https://www.instagram.com/machineservant/',
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

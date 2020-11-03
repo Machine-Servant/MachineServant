@@ -7,30 +7,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import GitHubButton from 'react-github-btn';
 
-import { SocialLinks } from '../../components/SocialLinks';
+import { SocialLinks } from '../SocialLinks';
+import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 
 import { Contact } from './components/Contact';
 import { Content, Inner } from './styles';
-import { graphql, useStaticQuery } from 'gatsby';
-
-type FooterQueryProps = {
-  site: {
-    siteMetadata: {
-      contact: string;
-    };
-  };
-};
 
 export const Footer: React.FC = () => {
-  const data = useStaticQuery<FooterQueryProps>(graphql`
-    query FooterPageQuery {
-      site {
-        siteMetadata {
-          contact
-        }
-      }
-    }
-  `);
+  const { contact } = useSiteMetadata();
 
   return (
     <Content>
@@ -41,12 +25,8 @@ export const Footer: React.FC = () => {
             <Contact icon={faMapPin}>Akron, Ohio</Contact>
             <Contact icon={faPhone}>(330)-285-3015</Contact>
             <Contact icon={faEnvelope}>
-              <a
-                rel="noreferrer"
-                target="_blank"
-                href={`mailto:${data.site.siteMetadata.contact}`}
-              >
-                {data.site.siteMetadata.contact}
+              <a rel="noreferrer" target="_blank" href={`mailto:${contact}`}>
+                {contact}
               </a>
             </Contact>
           </div>
