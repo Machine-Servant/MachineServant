@@ -3,7 +3,7 @@ date: "2019-09-23"
 title: "Publishing Posts with Remark"
 author: "Evan Stern"
 featuredImage: ./gatsby.png
-tags: ["MachineServant", "Web Development", "GatsbyJS", "Remark"]
+tags: ["MachineServant", "Web Development", "GatsbyJS", "Remark", "React"]
 keywords: ["GatsbyJS", "RemarkJS", "Blog", "Post", "Publish", "Draft"]
 published: true 
 ---

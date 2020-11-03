@@ -17,6 +17,17 @@ export const InnerContent = styled.div`
 
 export const Pre = styled.pre`
   ${tw`p-4 overflow-x-scroll border border-gray-400 shadow-lg`};
+
+  .gatsby-highlight-code-line {
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #f99;
+
+    ${tw`bg-gray-700`}
+  }
 `;
 
 export const Header1 = styled.h1`
