@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { graphql, useStaticQuery } from 'gatsby';
-
 import { Layout } from '../Layout';
 import { MainBlurb } from '../MainBlurb';
 import { SEO } from '../SEO';
 import { SocialLinks } from '../SocialLinks';
 import { CalendlyEmbed } from '../CalendlyEmbed';
+import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 
 import {
   Content,
@@ -18,24 +17,8 @@ import {
   ContactRow,
 } from './styles';
 
-type ContactPageQueryProps = {
-  site: {
-    siteMetadata: {
-      contact: string;
-    };
-  };
-};
-
 export const ContactPage: React.FC = () => {
-  const data = useStaticQuery<ContactPageQueryProps>(graphql`
-    query ContactPageQuery {
-      site {
-        siteMetadata {
-          contact
-        }
-      }
-    }
-  `);
+  const { contact } = useSiteMetadata();
 
   return (
     <Layout>
@@ -98,9 +81,9 @@ export const ContactPage: React.FC = () => {
                     className="underline lg:text-lg"
                     rel="noreferrer"
                     target="_blank"
-                    href={`mailto:${data.site.siteMetadata.contact}`}
+                    href={`mailto:${contact}`}
                   >
-                    {data.site.siteMetadata.contact}
+                    {contact}
                   </a>
                 </p>
               </div>

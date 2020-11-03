@@ -7,12 +7,11 @@
 
 import React from 'react';
 
-import { graphql, useStaticQuery } from 'gatsby';
-
 import { Background } from '../Background';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
 import { Image } from '../Image';
+import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 
 import { Content } from './styles';
 
@@ -27,20 +26,12 @@ export const Layout: React.FunctionComponent<ILayout> = ({
   showHeaderImage = false,
   children,
 }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+  const { title } = useSiteMetadata();
 
   return (
     <Background>
       {showHeaderImage && <Image name="machineservant.jpg" />}
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={title} />
       <Content>
         <main>{children}</main>
       </Content>
