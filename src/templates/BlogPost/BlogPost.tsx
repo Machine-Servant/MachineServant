@@ -6,6 +6,7 @@ import { faTags } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import RehypeReact from 'rehype-react';
+import { DiscussionEmbed } from 'disqus-react';
 
 import { Layout } from '../../components/Layout';
 import { MainBlurb } from '../../components/MainBlurb';
@@ -55,6 +56,9 @@ interface IBlogPost {
       };
       htmlAst: any;
       excerpt: string;
+      fields: {
+        slug: string;
+      };
     };
   };
 }
@@ -99,6 +103,11 @@ const BlogPost: React.FC<IBlogPost> = ({ data: { markdownRemark: post } }) => {
     keywords,
   } = post.frontmatter;
 
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_SHORTNAME || '',
+    config: { identifier: post.fields.slug, title },
+  };
+
   return (
     <Layout>
       <SEO
@@ -128,6 +137,8 @@ const BlogPost: React.FC<IBlogPost> = ({ data: { markdownRemark: post } }) => {
             })}
         </div>
       </div>
+      <hr className="my-6" />
+      <DiscussionEmbed {...disqusConfig} />
     </Layout>
   );
 };
@@ -139,6 +150,9 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
       excerpt(pruneLength: 160)
+      fields {
+        slug
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
