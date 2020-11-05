@@ -28,16 +28,18 @@ export const TagList: React.FC = () => {
   `);
 
   return (
-    <>
-      {data.allMarkdownRemark.group.map(group => {
-        return (
-          <Tag
-            key={group.tag}
-            value={group.tag}
-            detail={`(${group.totalCount})`}
-          />
-        );
-      })}
-    </>
+    <div className="flex flex-wrap items-center justify-start">
+      {data.allMarkdownRemark.group
+        .sort((a, b) => b.totalCount - a.totalCount)
+        .map(group => {
+          return (
+            <Tag
+              key={group.tag}
+              value={group.tag}
+              detail={`(${group.totalCount})`}
+            />
+          );
+        })}
+    </div>
   );
 };
