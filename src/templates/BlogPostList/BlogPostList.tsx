@@ -1,14 +1,15 @@
 import { graphql } from 'gatsby';
 
-import { BlogPage } from '../components/BlogPage';
+import { BlogPostList } from '../../components/BlogPostList';
 
-export default BlogPage;
+export default BlogPostList;
 
 export const pageQuery = graphql`
-  query {
+  query BlogPageQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       filter: { frontmatter: { published: { eq: true } } }
-      limit: 2000
+      limit: $limit
+      skip: $skip
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {

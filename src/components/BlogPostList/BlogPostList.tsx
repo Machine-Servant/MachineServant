@@ -8,6 +8,7 @@ import { Layout } from '../Layout';
 import { MainBlurb } from '../MainBlurb';
 import { Posts } from '../Posts';
 import { SEO } from '../SEO';
+import { Pagination } from '../Pagination';
 
 import { TagList } from './components/TagList';
 
@@ -30,16 +31,26 @@ interface IEdges {
   };
 }
 
-interface IBlogPage {
+interface IBlogPostList {
   data: {
     allMarkdownRemark: {
       edges: IEdges[];
     };
   };
+  pageContext: {
+    limit: number;
+    numPages: number;
+    currentPage: number;
+    totalCount: number;
+  };
 }
 
-export const BlogPage: React.FC<IBlogPage> = ({ data }) => {
+export const BlogPostList: React.FC<IBlogPostList> = ({
+  data,
+  pageContext,
+}) => {
   const posts = data.allMarkdownRemark.edges;
+  const { limit, numPages, currentPage, totalCount } = pageContext;
 
   return (
     <Layout>
@@ -55,6 +66,16 @@ export const BlogPage: React.FC<IBlogPage> = ({ data }) => {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="col-span-3 lg:col-span-2">
           <Posts posts={posts} />
+          <Pagination
+            numPages={numPages}
+            totalCount={totalCount}
+            currentIndex={currentPage}
+            itemsPerPage={limit}
+            basePath="/blog"
+            size="xl"
+            showDetails
+            buttonTextClassNames="text-gray-800 hover:text-gray-700"
+          />
         </div>
         <div className="col-span-3 px-4 lg:col-span-1 lg:px-0">
           <h3 className="px-4 mb-4 text-3xl font-bold">

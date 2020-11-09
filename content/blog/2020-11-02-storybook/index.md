@@ -3,7 +3,7 @@ date: "2020-11-02"
 title: "An Intro to StorybookJS"
 author: "Evan Stern"
 featuredImage: ./storybook-ui.png
-tags: ["Storybook", "Web Development", "Library", "React", "3rd Party"]
+tags: ["Storybook", "Web Development", "Library", "React", "3rd Party", "Tech"]
 keywords: ["Storybook", "StorybookJS", "Component", "Component Library", "storybook.js", "React", "ReactJS"]
 published: true
 ---
