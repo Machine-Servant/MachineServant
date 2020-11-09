@@ -12,6 +12,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const BlogPost = path.resolve(`src/templates/BlogPost/BlogPost.tsx`);
   const TaggedPosts = path.resolve(`src/templates/TaggedPosts/TaggedPosts.tsx`);
+  const BlogPostList = path.resolve(
+    `src/templates/BlogPostList/BlogPostList.tsx`
+  );
 
   const result = await graphql(`
     {
@@ -47,6 +50,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild('Error while running GraphQL query.');
     return;
   }
+
+  const postsPerPage = 5;
+  const numPages = Math.ceil(
+    result.data.postsRemark.edges.length / postsPerPage
+  );
+  Array.from({ length: numPages }).forEach((_, i) => {
+    const blogPostListPath = i === 0 ? `/blog` : `/blog/${i + 1}`;
+    createPage({
+      path: blogPostListPath,
+      component: BlogPostList,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+        totalCount: result.data.postsRemark.edges.length,
+      },
+    });
+    console.info(`Created Blog List Page: ${blogPostListPath}`);
+  });
 
   result.data.postsRemark.edges.forEach(({ node }) => {
     const { slug } = node.fields;
