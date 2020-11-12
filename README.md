@@ -12,15 +12,19 @@ the source code for their official website.
 
 ## How to run the project
 
-Very simply:
+You will need to export a `BIT_TOKEN` environment variable in order to run
+`npm` commands (this is due to the `.npmrc` file in this repository)
 
-```bash
-$ npm install
-$ npm start
-```
+You can get the token by installing `bit-bin`, logging into bit, and running
+the command `bit config get user.token`.
+
+See the following pages for information:
+* [Bit Installation](https://docs.bit.dev/docs/installation)
+* [Getting a BIT_TOKEN](https://docs.bit.dev/docs/ci#get-a-bit-token)
 
 This project uses [GatsbyJS](https://gatsbyjs.com) so all the normal gatsby
 commands should be available.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
