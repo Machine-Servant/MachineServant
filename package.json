@@ -2,7 +2,7 @@
   "name": "machineservant-website",
   "private": true,
   "description": "The official MachineServant company website",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Evan Stern <evanstern@machineservant.com>",
   "dependencies": {
     "@bit/machineservant.ms-components.pagination": "0.0.2",
@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@types/node": "12.12.50",
-    "@types/react": "16.9.43",
+    "@types/react": "16.9.56",
     "@types/react-dom": "16.9.8",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
