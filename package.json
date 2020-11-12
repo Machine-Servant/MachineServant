@@ -75,7 +75,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm config set @bit:registry https://node.bit.dev && gatsby build",
+    "preinstall": "npm config set @bit:registry https://node.bit.dev",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,md}\"",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
