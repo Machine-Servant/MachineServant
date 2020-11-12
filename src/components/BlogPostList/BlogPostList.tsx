@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Pagination } from '@bit/machineservant.ms-components.pagination';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTags } from '@fortawesome/free-solid-svg-icons';
 import { FluidObject } from 'gatsby-image';
@@ -8,7 +9,6 @@ import { Layout } from '../Layout';
 import { MainBlurb } from '../MainBlurb';
 import { Posts } from '../Posts';
 import { SEO } from '../SEO';
-import { Pagination } from '../Pagination';
 
 import { TagList } from './components/TagList';
 
