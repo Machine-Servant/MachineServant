@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Evan Stern <evanstern@machineservant.com>",
   "dependencies": {
+    "@bit/machineservant.ms-components.pagination": "0.0.2",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -58,6 +59,8 @@
     "@typescript-eslint/parser": "^2.34.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-react": "^7.20.3",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
     "prettier": "1.18.2",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
@@ -87,5 +90,19 @@
   },
   "bugs": {
     "url": "https://github.com/machine-servant/machineservant/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   }
 }
