@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -63,6 +63,7 @@ interface IBlogPost {
   };
 }
 
+/* eslint-disable */
 // @ts-ignore
 const renderAst = new RehypeReact({
   createElement: React.createElement,
@@ -91,6 +92,7 @@ const renderAst = new RehypeReact({
     ol: OrderedList,
   },
 }).Compiler;
+/* eslint-enable */
 
 const BlogPost: React.FC<IBlogPost> = ({ data: { markdownRemark: post } }) => {
   const {
@@ -123,7 +125,12 @@ const BlogPost: React.FC<IBlogPost> = ({ data: { markdownRemark: post } }) => {
       />
       <BlogPostContainer>
         <BlogPostContent>
-          <InnerContent>{renderAst(post.htmlAst)}</InnerContent>
+          <InnerContent>
+            {
+              /* eslint-disable @typescript-eslint/no-unsafe-call */
+              renderAst(post.htmlAst)
+            }
+          </InnerContent>
         </BlogPostContent>
       </BlogPostContainer>
       <div className="flex flex-col my-6">

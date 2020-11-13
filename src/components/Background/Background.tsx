@@ -1,17 +1,30 @@
 import React from 'react';
 
 import { graphql, useStaticQuery } from 'gatsby';
+import { FluidObject } from 'gatsby-image';
 
 import { Content } from './styles';
 
-interface IBackground {
+type BackgroundProps = {
   className?: string;
   children: React.ReactNode;
-}
+};
 
-export const Background: React.FC<IBackground> = ({ className, children }) => {
-  const data = useStaticQuery(graphql`
-    query {
+type BackgroundQueryProps = {
+  file: {
+    id: string;
+    childImageSharp: {
+      fluid: FluidObject;
+    };
+  };
+};
+
+export const Background: React.FC<BackgroundProps> = ({
+  className,
+  children,
+}) => {
+  const data = useStaticQuery<BackgroundQueryProps>(graphql`
+    query BackgroundQuery {
       file(relativePath: { eq: "background.png" }) {
         id
         childImageSharp {

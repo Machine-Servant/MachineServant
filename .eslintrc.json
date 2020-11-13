@@ -2,7 +2,6 @@
   "extends": [
     "plugin:react/recommended",
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier",
@@ -18,7 +17,6 @@
   "rules": {
     "jsx-quotes": ["warn", "prefer-double"],
     "@typescript-eslint/no-angle-bracket-type-assertion": [0],
-    "@typescript-eslint/interface-name-prefix": [1, "always"],
     "@typescript-eslint/no-explicit-any": [0],
     "react/prop-types": [0]
   },
