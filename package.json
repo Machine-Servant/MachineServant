@@ -2,7 +2,7 @@
   "name": "machineservant-website",
   "private": true,
   "description": "The official MachineServant company website",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Evan Stern <evanstern@machineservant.com>",
   "dependencies": {
     "@bit/machineservant.ms-components.pagination": "0.0.2",
