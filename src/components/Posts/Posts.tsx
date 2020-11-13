@@ -62,7 +62,7 @@ export const Posts: React.FC<IPosts> = ({ posts }) => {
             </Link>
             <div>
               {tags &&
-                tags.map(tag => {
+                tags.map((tag) => {
                   return <Tag key={tag} value={tag} />;
                 })}
             </div>

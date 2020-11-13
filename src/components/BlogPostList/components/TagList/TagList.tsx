@@ -31,7 +31,7 @@ export const TagList: React.FC = () => {
     <div className="flex flex-wrap items-center justify-start">
       {data.allMarkdownRemark.group
         .sort((a, b) => b.totalCount - a.totalCount)
-        .map(group => {
+        .map((group) => {
           return (
             <Tag
               key={group.tag}

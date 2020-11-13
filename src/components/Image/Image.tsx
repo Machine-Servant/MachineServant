@@ -49,7 +49,7 @@ export const Image: React.FC<IImage> = ({ className = '', name, alt }) => {
   `);
 
   const image = data.allImageSharp.edges.find(
-    edge => edge.node.fluid.originalName === name
+    (edge) => edge.node.fluid.originalName === name
   );
 
   if (!image) {
