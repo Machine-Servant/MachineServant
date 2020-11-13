@@ -2,7 +2,7 @@
   "name": "machineservant-website",
   "private": true,
   "description": "The official MachineServant company website",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Evan Stern <evanstern@machineservant.com>",
   "dependencies": {
     "@bit/machineservant.ms-components.pagination": "0.0.2",
@@ -49,7 +49,7 @@
     "react-github-btn": "1.2.0",
     "react-helmet": "5.2.1",
     "rehype-react": "6.1.0",
-    "tailwindcss": "1.5.1",
+    "tailwindcss": "1.9.6",
     "twin.macro": "1.5.1"
   },
   "devDependencies": {
