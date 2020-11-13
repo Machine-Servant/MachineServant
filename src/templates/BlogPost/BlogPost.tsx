@@ -132,7 +132,7 @@ const BlogPost: React.FC<IBlogPost> = ({ data: { markdownRemark: post } }) => {
         </span>
         <div>
           {tags &&
-            tags.map(tag => {
+            tags.map((tag) => {
               return <Tag key={tag} value={tag} />;
             })}
         </div>
