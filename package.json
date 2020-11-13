@@ -2,7 +2,7 @@
   "name": "machineservant-website",
   "private": true,
   "description": "The official MachineServant company website",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "Evan Stern <evanstern@machineservant.com>",
   "dependencies": {
     "@bit/machineservant.ms-components.pagination": "0.0.2",
@@ -13,7 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "5.15.1",
     "@fortawesome/react-fontawesome": "0.1.12",
     "@types/lodash": "4.14.165",
-    "@types/react-helmet": "5.0.16",
+    "@types/react-helmet": "6.1.0",
     "@types/rehype-react": "4.0.0",
     "cssnano": "4.1.10",
     "disqus-react": "1.0.10",
@@ -47,7 +47,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-github-btn": "1.2.0",
-    "react-helmet": "5.2.1",
+    "react-helmet": "6.1.0",
     "rehype-react": "6.1.0",
     "tailwindcss": "1.9.6",
     "twin.macro": "1.12.0"
