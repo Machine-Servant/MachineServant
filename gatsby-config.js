@@ -1,3 +1,5 @@
+const path = require('path');
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -118,6 +120,13 @@ module.exports = {
       options: {
         tailwind: true,
         ignore: ['prismjs/'],
+        content: [
+          path.join(process.cwd(), 'src/**/!(*.d).{ts,js,jsx,tsx}'),
+          path.join(
+            process.cwd(),
+            'node_modules/@bit/machineservant.ms-components.*/**/!(*.d).{ts,js,jsx,tsx}'
+          ),
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
