@@ -84,9 +84,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
-    "type-check": "tsc --noEmit --skipLibCheck"
+    "type-check": "tsc --noEmit --skipLibCheck",
+    "preinstall": "./scripts/bit_npm.sh"
   },
-  "preinstall": "./scripts/bit_npm.sh",
   "repository": {
     "type": "git",
     "url": "https://github.com/machine-servant/machineservant"
