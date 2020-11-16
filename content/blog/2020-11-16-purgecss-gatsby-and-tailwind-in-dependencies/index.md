@@ -3,7 +3,7 @@ date: "2020-11-16"
 title: "PurgeCSS, Tailwind, Gatsby, and Dependencies"
 author: "Evan Stern"
 featuredImage: ./featured.jpg
-tags: ["bit", "Web Development", "Library", "Gatsby", "3rd Party", "PurgeCSS", "Tailwind", "Tech"]
+tags: ["bit", "Web Development", "Library", "GatsbyJS", "3rd Party", "PurgeCSS", "Tailwind", "Tech"]
 keywords: ["Tailwind", "TailwindCSS", "Gatsby", "PurgeCSS", "GatsbyJS", "CSS", "machineservant", "node_modules", "dependencies"]
 published: true
 ---
