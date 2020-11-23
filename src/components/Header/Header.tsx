@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { Link } from 'gatsby';
+
+import { useSiteMetadata } from '../../hooks/useSiteMetadata';
+
 import { Content, Inner, SiteTitle, SiteLinks } from './styles';
 
 interface IHeader {
@@ -9,25 +12,30 @@ interface IHeader {
 
 export const Header: React.FunctionComponent<IHeader> = ({
   siteTitle = '',
-}) => (
-  <Content>
-    <Inner>
-      <SiteTitle>
-        <Link to="/">{siteTitle}</Link>
-      </SiteTitle>
-      <SiteLinks>
-        <div className="lg:flex-grow">
-          <Link activeClassName="underline" className="mr-4" to="/blog">
-            Blog
-          </Link>
-          <Link activeClassName="underline" className="mr-4" to="/contact/">
-            Contact
-          </Link>
-          <Link activeClassName="underline" className="mr-4" to="/about">
-            About Us
-          </Link>
-        </div>
-      </SiteLinks>
-    </Inner>
-  </Content>
-);
+}) => {
+  const { navigation } = useSiteMetadata();
+
+  return (
+    <Content>
+      <Inner>
+        <SiteTitle>
+          <Link to="/">{siteTitle}</Link>
+        </SiteTitle>
+        <SiteLinks>
+          <div className="lg:flex-grow">
+            {navigation.map(({ name, location }) => (
+              <Link
+                key={name}
+                activeClassName="underline"
+                className="mr-4"
+                to={location}
+              >
+                {name}
+              </Link>
+            ))}
+          </div>
+        </SiteLinks>
+      </Inner>
+    </Content>
+  );
+};

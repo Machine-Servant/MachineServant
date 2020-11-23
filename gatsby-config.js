@@ -28,6 +28,20 @@ module.exports = {
       facebook: 'https://www.facebook.com/MachineServant/',
       instagram: 'https://www.instagram.com/machineservant/',
     },
+    navigation: [
+      {
+        name: 'Services',
+        location: '/about',
+      },
+      {
+        name: 'Contact',
+        location: '/contact',
+      },
+      {
+        name: 'Blog',
+        location: '/blog',
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -13,6 +13,10 @@ type SiteMetadataProps = {
     facebook: string;
     instagram: string;
   };
+  navigation: {
+    name: string;
+    location: string;
+  }[];
 };
 
 type SiteMetadataQueryProps = {
@@ -38,6 +42,10 @@ export const useSiteMetadata = (): SiteMetadataProps => {
               linkedIn
               facebook
               instagram
+            }
+            navigation {
+              name
+              location
             }
           }
         }
