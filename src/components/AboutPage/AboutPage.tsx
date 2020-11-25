@@ -59,6 +59,8 @@ type AboutPageQueryProps = {
   therawtruthbook: ImageProps;
   semprefootball: ImageProps;
   ohiopyle: ImageProps;
+  ohiocashflow: ImageProps;
+  protagonista: ImageProps;
 };
 
 export const AboutPage: React.FC = () => {
@@ -90,6 +92,20 @@ export const AboutPage: React.FC = () => {
         }
       }
       ohiopyle: file(relativePath: { eq: "ohiopyle-thumbnail.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      ohiocashflow: file(relativePath: { eq: "ohiocashflow-thumbnail.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      protagonista: file(relativePath: { eq: "protagonista-thumbnail.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
@@ -186,6 +202,16 @@ export const AboutPage: React.FC = () => {
             fluid={data.ohiopyle.childImageSharp.fluid}
             href="https://ohiopyle.co"
             label="Ohiopyle Park Information Site"
+          />
+          <WebsitePreview
+            fluid={data.ohiocashflow.childImageSharp.fluid}
+            href="https://ohiocashflow.com"
+            label="OhioCashFlow"
+          />
+          <WebsitePreview
+            fluid={data.protagonista.childImageSharp.fluid}
+            href="https://protagonista.me"
+            label="Protagonista"
           />
         </div>
       </ServiceSection>
