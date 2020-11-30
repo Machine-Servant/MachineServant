@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install modules
-        with:
+        env:
           BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
         run: npm install
       - name: Run ESLint
