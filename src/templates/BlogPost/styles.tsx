@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 
 export const BlogPostContainer = styled.div`
-  ${tw`text-xl text-gray-800`};
+  ${tw`max-w-5xl mx-auto text-xl text-gray-800`};
 
   font-family: 'Inter', sans-serif;
 `;
