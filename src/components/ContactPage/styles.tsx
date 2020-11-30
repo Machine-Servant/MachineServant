@@ -22,7 +22,7 @@ export const TextArea = styled.textarea`
 `;
 
 export const SubmitButton = styled.button`
-  ${tw`w-full px-4 py-4 font-bold text-white uppercase bg-blue-500 rounded shadow hover:bg-blue-400 focus:shadow-outline`}
+  ${tw`w-full px-4 py-4 font-bold text-white uppercase bg-blue-500 rounded shadow hover:bg-blue-400 focus:ring`}
 `;
 
 export const ContactRow = styled.div`
