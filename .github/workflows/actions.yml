@@ -1,0 +1,19 @@
+name: CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        env:
+          BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+        run: npm install
+      - name: Run ESLint
+        env:
+          BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+        run: npm run lint
+      - name: Run TypeScript Type Check
+        env:
+          BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+        run: npm run type-check
