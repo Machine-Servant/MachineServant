@@ -6,7 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install modules
-        run: npm Install
+        with:
+          BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+        run: npm install
       - name: Run ESLint
         run: npm run lint
       - name: Run TypeScript Type Check
