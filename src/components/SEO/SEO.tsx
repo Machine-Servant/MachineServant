@@ -22,6 +22,7 @@ interface ISEO {
     width: number;
     height: number;
   };
+  article?: boolean;
 }
 
 export const SEO: React.FC<ISEO> = ({
@@ -31,6 +32,7 @@ export const SEO: React.FC<ISEO> = ({
   title,
   keywords = [],
   image: metaImage,
+  article,
 }) => {
   const {
     title: siteTitle,
@@ -67,7 +69,7 @@ export const SEO: React.FC<ISEO> = ({
         },
         {
           property: 'og:type',
-          content: 'website',
+          content: article ? 'article' : 'website',
         },
         {
           name: 'twitter:creator',
