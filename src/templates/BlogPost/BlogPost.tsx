@@ -117,6 +117,7 @@ const BlogPost: React.FC<IBlogPost> = ({ data: { markdownRemark: post } }) => {
         description={post.excerpt.replace(/\\n/g, ' ')}
         keywords={keywords}
         image={featured.childImageSharp.resize}
+        article
       />
       <MainBlurb
         image={<Img fluid={featuredImage.childImageSharp.fluid} />}
