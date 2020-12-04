@@ -8,6 +8,7 @@
 import React from 'react';
 
 import Helmet from 'react-helmet';
+import { useLocation } from '@reach/router';
 
 import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 
@@ -43,6 +44,8 @@ export const SEO: React.FC<ISEO> = ({
     keywords: siteKeywords,
   } = useSiteMetadata();
 
+  const { pathname } = useLocation();
+  const url = `${siteUrl}${pathname}`;
   const metaKeywords = keywords && keywords.length ? keywords : siteKeywords;
   const image =
     metaImage && metaImage.src ? `${siteUrl}${metaImage.src}` : null;
@@ -72,8 +75,28 @@ export const SEO: React.FC<ISEO> = ({
           content: article ? 'article' : 'website',
         },
         {
+          property: 'og:url',
+          content: url,
+        },
+        {
+          property: 'og:site_name',
+          content: 'MachineServant',
+        },
+        {
+          property: 'og:locale',
+          content: 'en_US',
+        },
+        {
           name: 'twitter:creator',
           content: author,
+        },
+        {
+          name: 'twitter:site',
+          content: author,
+        },
+        {
+          name: 'twitter:url',
+          content: url,
         },
         {
           name: 'twitter:title',
