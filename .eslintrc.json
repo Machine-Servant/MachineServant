@@ -12,7 +12,8 @@
       "project": "tsconfig.json"
   },
   "plugins": [
-      "@typescript-eslint"
+      "@typescript-eslint",
+      "@emotion"
   ],
   "rules": {
     "jsx-quotes": ["warn", "prefer-double"],
