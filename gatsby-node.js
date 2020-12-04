@@ -6,7 +6,7 @@
 
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
-const _ = require('lodash');
+const { kebabCase } = require('lodash');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
@@ -55,7 +55,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const numPages = Math.ceil(
     result.data.postsRemark.edges.length / postsPerPage
   );
-  Array.from({ length: numPages }).forEach((_, i) => {
+  Array.from({ length: numPages }).forEach((_item, i) => {
     const blogPostListPath = i === 0 ? `/blog` : `/blog/${i + 1}`;
     createPage({
       path: blogPostListPath,
@@ -83,9 +83,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log(`Created Blog Post: ${blogPath}`);
   });
 
-  result.data.tagsGroup.group.forEach(tag => {
+  result.data.tagsGroup.group.forEach((tag) => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/tags/${kebabCase(tag.fieldValue)}/`,
       component: TaggedPosts,
       context: {
         tag: tag.fieldValue,

@@ -27,19 +27,21 @@ export const TagList: React.FC = () => {
     }
   `);
 
+  const sortedTags = [...data.allMarkdownRemark.group].sort(
+    (a: ITagGroup, b: ITagGroup) => b.totalCount - a.totalCount
+  );
+
   return (
     <div className="flex flex-wrap items-center justify-start">
-      {data.allMarkdownRemark.group
-        .sort((a, b) => b.totalCount - a.totalCount)
-        .map((group) => {
-          return (
-            <Tag
-              key={group.tag}
-              value={group.tag}
-              detail={`(${group.totalCount})`}
-            />
-          );
-        })}
+      {sortedTags.map((group) => {
+        return (
+          <Tag
+            key={group.tag}
+            value={group.tag}
+            detail={`(${group.totalCount})`}
+          />
+        );
+      })}
     </div>
   );
 };
